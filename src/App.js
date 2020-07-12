@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+
+
+import CommonData from "./CommonData";
+
 import './App.css';
+import Showcase from "./Showcase";
+import Common from "./Common";
+import Footers from "./Footers";
+
 
 function App() {
+ 
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <Showcase/>
+    <div className="container">
+    {CommonData.map((data)=>{
+      return(
+        <Common imgsrc={data.imgsrc} heading={data.heading} para={data.para}/>
+      )
+    })}
+   
     </div>
+    <Footers/>
+
+    </>
   );
 }
 
